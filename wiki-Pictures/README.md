@@ -1,0 +1,1 @@
+These pictures are used in wikis
