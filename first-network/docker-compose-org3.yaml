@@ -29,6 +29,8 @@ services:
         - ./org3-artifacts/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/msp:/etc/hyperledger/fabric/msp
         - ./org3-artifacts/crypto-config/peerOrganizations/org3.example.com/peers/peer0.org3.example.com/tls:/etc/hyperledger/fabric/tls
         - peer0.org3.example.com:/var/hyperledger/production
+    #extra_hosts:
+    #    - orderer.example.com:119.45.39.161
     ports:
       - 11051:7051
       - 11053:7053
@@ -51,6 +53,8 @@ services:
         - ./org3-artifacts/crypto-config/peerOrganizations/org3.example.com/peers/peer1.org3.example.com/msp:/etc/hyperledger/fabric/msp
         - ./org3-artifacts/crypto-config/peerOrganizations/org3.example.com/peers/peer1.org3.example.com/tls:/etc/hyperledger/fabric/tls
         - peer1.org3.example.com:/var/hyperledger/production
+    #extra_hosts:
+    #    - orderer.example.com:119.45.39.161
     ports:
       - 12051:7051
       - 12053:7053
@@ -88,5 +92,7 @@ services:
     depends_on:
       - peer0.org3.example.com
       - peer1.org3.example.com
+    #extra_hosts:
+    #    - orderer.example.com:119.45.39.161
     networks:
       - byfn
