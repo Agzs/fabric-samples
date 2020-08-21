@@ -13,7 +13,7 @@ services:
     working_dir: /etc/hyperledger/fabric-ca-server
     volumes:
         - ./crypto-config/peerOrganizations/org1.example.com/ca:/etc/hyperledger/fabric-ca-server/ca
-        - ./ca-server-config/org1-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server/fabric-ca-server-config.yaml
+        - ./ca-server-config/org1-ca-server:/etc/hyperledger/fabric-ca-server/
     command: sh -c 'fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove'
     ports:
         - 7054:7054
@@ -29,7 +29,7 @@ services:
     working_dir: /etc/hyperledger/fabric-ca-server
     volumes:
         - ./crypto-config/peerOrganizations/org2.example.com/ca:/etc/hyperledger/fabric-ca-server/ca
-        - ./ca-server-config/org2-ca-server-config.yaml:/etc/hyperledger/fabric-ca-server/fabric-ca-server-config.yaml
+        - ./ca-server-config/org2-ca-server:/etc/hyperledger/fabric-ca-server/
     command: sh -c 'fabric-ca-server start -b admin:adminpw --cfg.affiliations.allowremove --cfg.identities.allowremove'
     ports:
         - 80:7054
